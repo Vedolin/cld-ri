@@ -1,0 +1,11 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo Build SAM package
+      - pwd
+      - aws cloudformation package --template-file cld-ri-src.yaml --s3-bucket cld-ri-packages --output-template-file cld-ri.yaml
+  build:
+    commands:
+      - echo Build the package
