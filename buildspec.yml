@@ -9,3 +9,7 @@ phases:
   build:
     commands:
       - echo Build the package
+  post_build:
+    commands:
+      - echo Post build
+      - aws cloudformation deploy --template-file cld-ri.yaml --stack-name cld-ri-stack --capabilities CAPABILITY_IAM      
